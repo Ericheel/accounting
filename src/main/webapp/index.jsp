@@ -6,18 +6,20 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <script src="${pageContext.request.contextPath}/bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
     <script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
+    <title>用户登录</title>
 </head>
 <body class="container">
 <h1>EZ-Accounting</h1>
-<form class="form-horizontal" style="padding-top: 150px">
+<form method="post" action="${pageContext.request.contextPath}/login" id="confirmLogin" class="form-horizontal" style="padding-top: 150px">
     <div class="form-group">
         <label for="username" class="col-sm-4 control-label">用户名</label>
         <div class="col-sm-4">
@@ -40,8 +42,11 @@
         </div>
     </div>
     <div class="form-group">
-        <div class="col-sm-offset-4 col-sm-4">
-            <button type="submit" class="btn btn-default">Sign in</button>
+        <div class="col-sm-offset-4 col-sm-2">
+            <button onclick="userLogin()" class="btn btn-default">登录</button>
+        </div><span><font color="red">${loginError}</font></span>
+        <div class="col-sm-2">
+            <a href="${pageContext.request.contextPath}/register.jsp" class="btn btn-default">注册</a>
         </div>
     </div>
 </form>
