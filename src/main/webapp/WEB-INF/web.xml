@@ -16,4 +16,8 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>web.servlet.LoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>web.servlet.RegisterServlet</servlet-class>
+    </servlet>
 </web-app>
