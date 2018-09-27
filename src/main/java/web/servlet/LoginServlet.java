@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
             User user = userService.findUserByUsername(username);
             if (null == user) {
                 request.getSession().setAttribute("loginError", "账号错误");
-                response.sendRedirect("index");
+                request.getRequestDispatcher(request.getContextPath() + "index.jsp").forward(request, response);
             } else {
                 String password = request.getParameter("password");
                 if (MD5Utils.verify(password, user.getPassword())) {
@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
                     request.getRequestDispatcher(request.getContextPath() + "").forward(request, response);
                 } else {
                     request.getSession().setAttribute("loginError", "密码错误");
-                    request.getRequestDispatcher(request.getContextPath() + "index").forward(request, response);
+                    request.getRequestDispatcher(request.getContextPath() + "index.jsp").forward(request, response);
                 }
             }
         } catch (SQLException e) {

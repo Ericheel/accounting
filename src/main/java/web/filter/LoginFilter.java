@@ -19,7 +19,7 @@ public class LoginFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         if (null == request.getSession().getAttribute("loginUser")) {
-            request.getRequestDispatcher(request.getContextPath() + "index.jsp").forward(servletRequest, servletResponse);
+            request.getRequestDispatcher(request.getContextPath() + "login").forward(servletRequest, servletResponse);
         } else {
             filterChain.doFilter(servletRequest, servletResponse);
         }

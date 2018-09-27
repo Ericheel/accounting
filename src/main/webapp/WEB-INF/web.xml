@@ -5,13 +5,14 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
            version="2.5">
     <filter>
-        <filter-name>login</filter-name>
+        <filter-name>loginFilter</filter-name>
         <filter-class>web.filter.LoginFilter</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>login</filter-name>
+        <filter-name>loginFilter</filter-name>
         <url-pattern>/main/*</url-pattern>
     </filter-mapping>
+
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>web.servlet.LoginServlet</servlet-class>
@@ -20,6 +21,7 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>web.servlet.RegisterServlet</servlet-class>

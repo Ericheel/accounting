@@ -31,7 +31,11 @@ public class RegisterServlet extends HttpServlet {
             if (null == user) {
                 String password = request.getParameter("password");
                 userService.createUser(new User(null, username, MD5Utils.generate(password)));
-                request.getRequestDispatcher(request.getContextPath() + "index").forward(request, response);
+                request.getSession().setAttribute("registerMessage","success");
+                request.getRequestDispatcher(request.getContextPath() + "index.jsp").forward(request, response);
+            }else{
+                request.getSession().setAttribute("registerMessage","error");
+                request.getRequestDispatcher(request.getContextPath() + "register.jsp").forward(request, response);
             }
         } catch (SQLException e) {
             e.printStackTrace();
