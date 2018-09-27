@@ -1,16 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 0XCAFEBABE
-  Date: 2018/9/27
-  Time: 10:57
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<ul id="toolbar" class="nav nav-tabs nav-justified">
+    <li onclick="showTake()" role="presentation"><a href="#"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;记录</a></li>
+    <li role="presentation"><a href="#"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;汇总</a></li>
+    <li role="presentation"><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;设置</a></li>
+    <li role="presentation"><a href="#"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;反馈</a></li>
+    <li role="presentation"><a href="#"><span class="glyphicon glyphicon-console" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;关于</a></li>
+</ul>

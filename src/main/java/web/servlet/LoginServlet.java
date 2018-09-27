@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
                 String password = request.getParameter("password");
                 if (MD5Utils.verify(password, user.getPassword())) {
                     request.getSession().setAttribute("loginUser", user);
-                    request.getRequestDispatcher(request.getContextPath() + "").forward(request, response);
+                    request.getRequestDispatcher(request.getContextPath() + "/main/home.jsp").forward(request, response);
                 } else {
                     request.getSession().setAttribute("loginError", "密码错误");
                     request.getRequestDispatcher(request.getContextPath() + "index.jsp").forward(request, response);
